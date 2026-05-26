@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Task Details</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#f2f2f2;">
+
+<div class="container mt-5">
+
+    <div class="card shadow p-5 mx-auto" style="max-width: 900px;">
+
+
+        <h1 class="text-center mb-5">
+            Task Details
+        </h1>
+
+
+        <h3 class="fw-bold mb-4"
+            th:text="${task.title}">
+
+            Task Title
+        </h3>
+
+
+        <p>
+            <strong>Description:</strong>
+
+            <span th:text="${task.description}">
+            </span>
+        </p>
+
+
+        <p>
+            <strong>Assignee:</strong>
+
+            <span th:text="${task.assignee}">
+            </span>
+        </p>
+
+
+        <p>
+            <strong>Due Date:</strong>
+
+            <span th:text="${task.dueDate}">
+            </span>
+        </p>
+
+
+        <p class="mb-5">
+            <strong>Priority:</strong>
+
+            <span th:text="${task.priority}">
+            </span>
+        </p>
+
+        <!-- Buttons -->
+        <div class="text-center">
+
+            <a th:href="@{/update/{id}(id=${task.id})}"
+               class="btn btn-success me-3">
+
+                Update Task
+            </a>
+
+            <a href="/tasks"
+               class="btn btn-outline-success">
+
+                Back to Task List
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
